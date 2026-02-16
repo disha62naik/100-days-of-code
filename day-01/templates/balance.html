@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Balance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Check Balance</h2>
+
+    <form method="POST">
+        <input type="text" name="acc_no" placeholder="Account Number" required>
+        <button type="submit">Check</button>
+    </form>
+
+    {% if balance is not none %}
+        <h3>Current Balance: ₹ {{ balance }}</h3>
+    {% endif %}
+
+    <p>{{ message }}</p>
+    <a href="/">Back</a>
+</body>
+</html>
