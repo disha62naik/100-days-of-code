@@ -1,0 +1,23 @@
+[
+    {
+        "id": "fddd9534-f217-4f7f-ba3f-2a977a6dd553",
+        "title": "Coding",
+        "priority": "High",
+        "completed": true,
+        "created_at": "2026-02-19 22:17"
+    },
+    {
+        "id": "4b891d29-47a3-4c68-870c-6a16f47e0d6a",
+        "title": "Shopping",
+        "priority": "Medium",
+        "completed": false,
+        "created_at": "2026-02-19 22:18"
+    },
+    {
+        "id": "bcb4bb1f-1bff-4ae9-adb6-2a55171c2223",
+        "title": "meetup",
+        "priority": "Medium",
+        "completed": false,
+        "created_at": "2026-02-19 22:18"
+    }
+]

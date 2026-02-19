@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Task Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Smart Task Manager</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/add">Add Task</a>
+        <a href="/view">View Tasks</a>
+        <a href="/search">Search</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>

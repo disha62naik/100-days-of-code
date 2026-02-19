@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Search Tasks</h2>
+
+<form method="POST">
+    <input type="text" name="keyword" placeholder="Enter keyword" required>
+    <button type="submit">Search</button>
+</form>
+
+<hr>
+
+{% for task in results %}
+    <div>
+        {{ task.title }} ({{ task.priority }})
+    </div>
+{% endfor %}
+
+{% endblock %}
