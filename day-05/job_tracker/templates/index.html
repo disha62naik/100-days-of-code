@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="flex justify-between mb-4">
+    <div>
+        <a href="/add" class="bg-blue-500 text-white px-4 py-2 rounded">
+            + Add Job
+        </a>
+
+        <a href="/" class="ml-2 bg-gray-400 text-white px-4 py-2 rounded">
+            All
+        </a>
+
+        <a href="/?status=Applied" class="ml-2 bg-yellow-500 text-white px-4 py-2 rounded">
+            Applied
+        </a>
+
+        <a href="/?status=Interview" class="ml-2 bg-blue-500 text-white px-4 py-2 rounded">
+            Interview
+        </a>
+
+        <a href="/?status=Rejected" class="ml-2 bg-red-500 text-white px-4 py-2 rounded">
+            Rejected
+        </a>
+
+        <a href="/?status=Offer" class="ml-2 bg-green-500 text-white px-4 py-2 rounded">
+            Offer
+        </a>
+    </div>
+
+    <a href="/logout" class="bg-red-600 text-white px-4 py-2 rounded">
+        Logout
+    </a>
+</div>
+
+<table class="w-full bg-white shadow rounded">
+    <thead class="bg-gray-200">
+        <tr>
+            <th class="p-2">Company</th>
+            <th class="p-2">Role</th>
+            <th class="p-2">Date</th>
+            <th class="p-2">Status</th>
+            <th class="p-2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for job in jobs %}
+        <tr class="text-center border-t">
+            <td class="p-2">{{ job[1] }}</td>
+            <td class="p-2">{{ job[2] }}</td>
+            <td class="p-2">{{ job[3] }}</td>
+            <td class="p-2 font-semibold">{{ job[4] }}</td>
+            <td class="p-2">
+                <a href="/edit/{{ job[0] }}" class="text-blue-600">Edit</a> |
+                <a href="/delete/{{ job[0] }}" class="text-red-600">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

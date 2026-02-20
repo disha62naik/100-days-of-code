@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form method="POST" class="bg-white p-6 rounded shadow space-y-4">
+
+    <input type="text" name="company" placeholder="Company Name"
+        class="w-full border p-2 rounded" required>
+
+    <input type="text" name="role" placeholder="Job Role"
+        class="w-full border p-2 rounded" required>
+
+    <input type="date" name="date"
+        class="w-full border p-2 rounded" required>
+
+    <select name="status" class="w-full border p-2 rounded">
+        <option>Applied</option>
+        <option>Interview</option>
+        <option>Rejected</option>
+        <option>Offer</option>
+    </select>
+
+    <textarea name="notes" placeholder="Notes"
+        class="w-full border p-2 rounded"></textarea>
+
+    <button class="bg-green-500 text-white px-4 py-2 rounded">
+        Save
+    </button>
+
+</form>
+
+{% endblock %}

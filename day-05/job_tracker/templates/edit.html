@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form method="POST" class="bg-white p-6 rounded shadow space-y-4">
+
+    <input type="text" name="company" value="{{ job[1] }}"
+        class="w-full border p-2 rounded" required>
+
+    <input type="text" name="role" value="{{ job[2] }}"
+        class="w-full border p-2 rounded" required>
+
+    <input type="date" name="date" value="{{ job[3] }}"
+        class="w-full border p-2 rounded" required>
+
+    <select name="status" class="w-full border p-2 rounded">
+        <option {% if job[4]=='Applied' %}selected{% endif %}>Applied</option>
+        <option {% if job[4]=='Interview' %}selected{% endif %}>Interview</option>
+        <option {% if job[4]=='Rejected' %}selected{% endif %}>Rejected</option>
+        <option {% if job[4]=='Offer' %}selected{% endif %}>Offer</option>
+    </select>
+
+    <textarea name="notes" class="w-full border p-2 rounded">
+        {{ job[5] }}
+    </textarea>
+
+    <button class="bg-blue-500 text-white px-4 py-2 rounded">
+        Update
+    </button>
+
+</form>
+
+{% endblock %}
